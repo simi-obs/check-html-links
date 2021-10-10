@@ -1,0 +1,51 @@
+{
+  "name": "check-html-links",
+  "version": "0.2.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A fast low dependency checker of html links/references",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simi-obs/check-html-links"
+  },
+  "author": "Simon Obetko + Modern Web",
+  "homepage": "https://github.com/simi-obs/check-html-links",
+  "main": "./index.js",
+  "bin": {
+    "check-html-links": "src/cli.js"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "mocha --timeout 5000 test-node/**/*.test.{js,cjs} test-node/*.test.{js,cjs}",
+    "test:watch": "onchange 'src/**/*.{js,cjs}' 'test-node/**/*.{js,cjs}' -- npm test",
+    "types:copy": "copyfiles \"./types/**/*.d.ts\" dist-types/"
+  },
+  "files": [
+    "*.js",
+    "dist",
+    "dist-types",
+    "src"
+  ],
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "command-line-args": "^5.1.1",
+    "glob": "^7.0.0",
+    "minimatch": "^3.0.4",
+    "sax-wasm": "^2.0.0",
+    "slash": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/command-line-args": "^5.2.0",
+    "@types/glob": "^7.0.0",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2"
+  },
+  "types": "dist-types/index.d.ts"
+}
